@@ -6,6 +6,9 @@ const passport = require('passport')
 const LocalStrategy = require('passport-local');
 const ExpressError = require('./utils/ExpressError');
 const models = require('./models');
+const User = require('./models/user');
+
+const users = require('./routes/users');
 
 const app = express();
 
@@ -30,20 +33,21 @@ app.use(session(sessionConfig))
 //Everything needed to set up passport in the app file
 app.use(passport.initialize());
 app.use(passport.session()); 
-// passport.use(new LocalStrategy(User.authenticate()));
+passport.use(new LocalStrategy(User.authenticate()));
 
-// passport.serializeUser(User.serializeUser());
-// passport.deserializeUser(User.deserializeUser());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
-// app.use((req, res, next) => {
-//   res.locals.currentUser = req.user;
-//   //Add these in if flash ends up being used in this project
-//   // res.locals.success = req.flash('success');
-//   // res.locals.error = req.flash('error');
-//   next();
-// })
+app.use((req, res, next) => {
+  res.locals.currentUser = req.user;
+  //Add these in if flash ends up being used in this project
+  // res.locals.success = req.flash('success');
+  // res.locals.error = req.flash('error');
+  next();
+})
 
 //Routes will go here
+app.use('/', users);
 
 app.all('*', (req, res, next) => {
   next(new ExpressError('Page Not Found', 404))
