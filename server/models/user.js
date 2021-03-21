@@ -10,14 +10,15 @@ const UserSchema = new Schema({
   },
   posts: [{
     type: Schema.Types.ObjectId,
-    ref:'posts'
+    ref:'Posts'
   }],
   prompts: [{
     type: Schema.Types.ObjectId,
-    ref: 'prompts'
+    ref: 'Prompt'
   }]
 });
 
 
 UserSchema.plugin(passportLocalMongoose);
 module.exports = mongoose.model('User', UserSchema);
+

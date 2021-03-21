@@ -5,6 +5,7 @@ const session = require('express-session');
 const passport = require('passport')
 const LocalStrategy = require('passport-local');
 const ExpressError = require('./utils/ExpressError');
+const models = require('./models');
 
 const app = express();
 
