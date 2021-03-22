@@ -14,3 +14,6 @@ db.once("open", () => {
 });
 
 //User models exported from the index file!!!
+module.exports.User = require('./user');
+module.exports.Prompt = require('./prompt');
+module.exports.Post = require('./post');
