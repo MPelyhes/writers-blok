@@ -10,7 +10,7 @@ const Prompt = () => {
         text here, but I forgot how to do that quickly using emmett. Oh well!
       </div>
       <div className="prompt-author">
-        Submitted by Matt Pelyhes
+        Submitted by <span className="colon">:</span> Matt Pelyhes
       </div>
     </div>
   )
