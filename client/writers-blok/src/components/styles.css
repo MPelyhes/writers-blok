@@ -1,6 +1,8 @@
 body{
   margin: 0;
+  font-family: 'Cairo', sans-serif;
 }
+
 .app-container{
   display: flex;
   flex-direction: row;
@@ -10,6 +12,7 @@ body{
   margin: 0;
   
 }
+
 .main{
   background: #252D59;
   width:100%;
@@ -18,6 +21,10 @@ body{
   overflow:auto;
   align-items: center;
   border-right: 3px dashed #F22E8A;
+}
+
+.main::-webkit-scrollbar {
+  display: none;
 }
 
 .notepad{
@@ -31,19 +38,21 @@ body{
  
 }
 
-.prompt{
+.prompt-container{
   background-color: white;
-  height: 5rem;
-  width: 20rem;
+  height: 12rem;
+  width: 30rem;
   margin: 1.5rem;
-  padding: 5rem;
+  /* padding: 2rem; */
+  border: 10px solid white;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.main::-webkit-scrollbar {
-  display: none;
-}
+
 textarea{
   font-family: 'Cairo', sans-serif;
   font-weight: 400;
@@ -61,4 +70,37 @@ h1{
   color: #012340;
   font-family: 'Cairo', sans-serif;
   border-bottom: 4px solid #F22E8A;
+}
+
+h2{
+  margin: 0 0 0.5rem 0;
+  align-self: flex-start;
+  border-bottom: 2px solid #A62D7B;
+}
+
+.prompt {
+  margin-bottom: 0.5rem;
+}
+
+.prompt-author {
+  align-self: flex-end;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.navbar{
+ display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+  align-items:center;
+  width: 100%;
+  padding: 1rem;
+  top: 0;
+  left: 0;
+  background-color:#A62D7B;
+}
+
+.nav-links:a {
+  text-decoration: none;
+
 }
