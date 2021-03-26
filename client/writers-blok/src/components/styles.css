@@ -148,12 +148,12 @@ h2{
 }
 
 .logo {
+  font-style: italic;
   margin-left: 1rem;
   color: #F22E8A;
   font-weight: 900;
   font-size: 1.5rem;
-  -webkit-text-stroke: 0.5px #252D59;
-  text-shadow: -2.5px 2.5px 0px #A62D7B,
+    text-shadow: -2.5px 2.5px 0px #A62D7B,
                -5px 5px 0px #252D59,
                -7.5px 7.5px 0px #012340;
 
@@ -197,10 +197,9 @@ h2{
   cursor: pointer;
   margin-top: 1rem;
   border: 3px solid #F22E8A;
-  border-radius: ;
   padding: 0.25rem 0.5rem;
-  border-top-left-radius: 3px;
-  border-bottom-right-radius: 3px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   border-left: 2px solid #F22E8A;
   border-bottom: 3px solid #F22E8A;
   transition: box-shadow 0.5s ease;
@@ -208,8 +207,8 @@ h2{
 
 .save-button:hover {
  /* text-shadow: 0.25px 0.5px 0.35px white; */
-  box-shadow: -1.5px 1.5px 0px #A62D7B,
-               -3px 3px 0px #252D59,
-               -4.5px 4.5px 0px #012340;
+  box-shadow: -1.5px 1.5px 1px #A62D7B,
+               -3px 3px 1px #252D59,
+               -4.5px 4.5px 1px #012340;
                
 }
