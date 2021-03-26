@@ -79,9 +79,19 @@ textarea{
 }
 
 h1{
-  color: #012340;
+  color: hsl(240, 41%, 25%);
   font-family: 'Cairo', sans-serif;
-  border-bottom: 4px solid rgb(242, 46, 138);
+  font-size: 2rem;
+  /* border-bottom: 4px solid rgb(242, 46, 138); */
+  /* border-right: 5px solid #012340;
+  padding-right: 0.25rem; */
+}
+
+.title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+ 
 }
 
 h2{
@@ -142,6 +152,7 @@ h2{
   color: #F22E8A;
   font-weight: 900;
   font-size: 1.5rem;
+  -webkit-text-stroke: 0.5px #252D59;
   text-shadow: -2.5px 2.5px 0px #A62D7B,
                -5px 5px 0px #252D59,
                -7.5px 7.5px 0px #012340;
@@ -151,4 +162,54 @@ h2{
 .logo:hover {
   /* text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.7); */
   cursor: pointer;
+}
+
+.blinking-cursor {
+  align-self: center;
+  margin-bottom: 5px;
+  font-weight: 100;
+  font-size: 2rem;
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -ms-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
+}
+
+@keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #F22E8A;
+  }
+}
+
+.save-button{
+  padding: 0;
+  border: none;
+  font: inherit;
+  font-weight: 700;
+  color: white;
+  background-color: #F22E8A;
+  /* show a hand cursor on hover; some argue that we
+  should keep the default arrow cursor for buttons */
+  cursor: pointer;
+  margin-top: 1rem;
+  border: 3px solid #F22E8A;
+  border-radius: ;
+  padding: 0.25rem 0.5rem;
+  border-top-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-left: 2px solid #F22E8A;
+  border-bottom: 3px solid #F22E8A;
+  transition: box-shadow 0.5s ease;
+}
+
+.save-button:hover {
+ /* text-shadow: 0.25px 0.5px 0.35px white; */
+  box-shadow: -1.5px 1.5px 0px #A62D7B,
+               -3px 3px 0px #252D59,
+               -4.5px 4.5px 0px #012340;
+               
 }
