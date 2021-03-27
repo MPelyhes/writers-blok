@@ -99,6 +99,14 @@ h2{
   align-self: flex-start;
   border-bottom: 2px solid #F22E8A;
   
+
+}
+
+h3{
+  color: #F22E8A;
+  text-shadow:-2.5px 2.5px 0px #252D59;
+  /* -5px 5px 0px #012340; */
+  font-size: 1.55rem;
 }
 
 .prompt {
@@ -137,6 +145,7 @@ h2{
 .nav-tags {
   text-decoration: none;
   color: #F22E8A;
+  text-shadow:-1.5px 1.5px 0px #252D59;
   transition: text-shadow 0.25s ease;
 }
 
@@ -192,8 +201,6 @@ h2{
   font-weight: 700;
   color: white;
   background-color: #F22E8A;
-  /* show a hand cursor on hover; some argue that we
-  should keep the default arrow cursor for buttons */
   cursor: pointer;
   margin-top: 1rem;
   border: 3px solid #F22E8A;
@@ -206,9 +213,70 @@ h2{
 }
 
 .save-button:hover {
- /* text-shadow: 0.25px 0.5px 0.35px white; */
-  box-shadow: -1.5px 1.5px 1px #A62D7B,
-               -3px 3px 1px #252D59,
-               -4.5px 4.5px 1px #012340;
+  box-shadow: -1.5px 1.5px 0px #A62D7B,
+               -3px 3px 0px #252D59,
+               -4.5px 4.5px 0px #012340;
                
+}
+
+.create-prompt-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 2rem;;
+  align-items: center;
+  height:80%;
+}
+
+.create-title{
+  background-color: transparent;
+  border-right: none;
+  border-top: none;
+  border-top-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-left: 2px solid #F22E8A;
+  border-bottom: 3px solid #F22E8A;
+  color: white;
+  font-size: 1.5rem;
+  transition: box-shadow 0.2s ease;
+}
+
+.create-title:hover {
+  cursor: pointer;
+  box-shadow: -2.5px 2.5px 0px #A62D7B,
+  -5px 5px 0px #252D59,
+  -7.5px 7.5px 0px #012340;
+}
+
+.create-prompt{
+  background-color: transparent;
+  border-right: none;
+  border-top: none;
+  border-top-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-left: 2px solid #F22E8A;
+  border-bottom: 3px solid #F22E8A;
+  color: white;
+  font-size: 1rem;;
+  margin-top: 2rem;
+  width: 100%;
+  height: 10rem;
+  transition: box-shadow 0.2s ease;
+}
+
+.create-prompt:hover{
+  cursor: pointer;
+  box-shadow: -2.5px 2.5px 0px #A62D7B,
+  -5px 5px 0px #252D59,
+  -7.5px 7.5px 0px #012340;
+}
+
+::placeholder{
+  color: white;
+  opacity: 0.9;
+}
+
+
+textarea:focus, input:focus{
+  outline: none;
 }
