@@ -42,7 +42,7 @@ body{
 
 .prompt-container{
   height: 8rem;
-  width: 30rem;
+  max-width: 30rem;
   margin: 1.5rem;
   padding: 2rem;
   border-radius: 15px;
@@ -124,6 +124,8 @@ h3{
   color:#F22E8A;
 }
 .navbar{
+  background: #252D59;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
  display: flex;
   flex-direction: row;
   justify-content: space-between; 
@@ -132,6 +134,7 @@ h3{
   padding: 1rem;
   top: 0;
   left: 0;
+  position: sticky;
 }
 
 .nav-links{
@@ -277,6 +280,6 @@ h3{
 }
 
 
-textarea:focus, input:focus{
+textarea:focus, input:focus, button:focus{
   outline: none;
 }

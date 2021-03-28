@@ -7,13 +7,13 @@ const Main = () => {
   return (
     <div className="main">
       <Navbar />
-      <CreatePrompt />
-      {/* <Prompt />
+      {/* <CreatePrompt /> */}
       <Prompt />
       <Prompt />
       <Prompt />
       <Prompt />
-      <Prompt /> */}
+      <Prompt />
+      <Prompt />
     </div>
   )
 }
