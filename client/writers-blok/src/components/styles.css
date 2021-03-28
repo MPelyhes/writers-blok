@@ -108,6 +108,7 @@ h3{
   text-shadow:-2.5px 2.5px 0px #252D59;
   /* -5px 5px 0px #012340; */
   font-size: 1.55rem;
+  text-align: center;
 }
 
 .prompt {

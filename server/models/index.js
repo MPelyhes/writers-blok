@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/writers-blok', {
+mongoose.connect('mongodb://localhost/writers-blok', {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,

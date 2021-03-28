@@ -1,43 +1,67 @@
-const User = require('../models/user');
+const db = require('../models');
+const jwt = require('jsonwebtoken');
 
-
-// module.exports.renderRegister = (req, res) => {
-//   res.render('users/register')
-// };
-
-module.exports.createUser = async (req, res, next) => {
-  try {
-    const { email, username, password } = req.body;
-    const user = new User({ email, username });
-    const registeredUser = await User.register(user, password);
-    console.log(registeredUser);
-    req.login(registeredUser, err => {
-      if(err) return next(err);
-      req.flash('success', 'Welcome to BetterMeals!');
-      res.redirect('/home');
-    })
-  } catch(e){
+exports.login = async () => {
+  try{
+  //finding a user
+  let user = await db.user.findOne({
+    email: req.body.email
+  });
+  let { id, username, profileImageUrl } = user;
+  let isMatch = await user.comparePassword(req.body.password);
+  if(isMatch){
+    let token = jwt.sign({
+      id,
+      username,
+      profileImageUrl
+    },
+    process.env.SECRET_KEY
+    );
+    return res.status(200).json({
+      id,
+      username,
+      profileImageUrl,
+      token
+    });
+  } else {
     return next({
       status: 400,
       message: "Invalid email/password"
     })
-      // res.redirect('register')
   }
-};
+ } catch(e) {
+  return next({
+    status: 400,
+    message: "Invalid email/password"
+  })
+ } 
+}
 
-// module.exports.renderLogin = (req, res) => {
-//   res.render('users/login')
-// };
-
-module.exports.login = (req, res) => {
-  req.flash('success', 'Welcome back!');
-  const redirectUrl = req.session.returnTo || '/home';
-  delete req.session.returnTo;
-  res.redirect(redirectUrl);
-};
-
-module.exports.logout = (req, res) => {
-  req.logout();
-  // req.flash('success', 'Goodbye!')
-  // res.redirect('/home');
+exports.register = async (req, res, next) => {
+  try{
+    let user = await db.User.create(req.body);
+    let { id, username, profileImageUrl } = user;
+    let token = jwt.sign({
+      id,
+      username,
+      profileImageUrl
+    },
+    process.env.SECRET_KEY
+    );
+    return res.status(200).jsom({
+      id,
+      username,
+      profileImageUrl,
+      token
+    })
+  } catch(err){
+    //if a validation fails
+    if(err.code === 11000){
+      err.message = 'Sorry, that username and/or email is taken'
+    }
+    return next({
+      status: 400,
+      message: err.message
+    });
+  }
 };

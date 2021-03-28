@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const express = require('express');
+const cors = require('cors');
 const session = require('express-session');
 const passport = require('passport')
 const LocalStrategy = require('passport-local');
@@ -31,12 +32,12 @@ const sessionConfig = {
 app.use(session(sessionConfig))
 
 //Everything needed to set up passport in the app file
-app.use(passport.initialize());
-app.use(passport.session()); 
-passport.use(new LocalStrategy(User.authenticate()));
+// app.use(passport.initialize());
+// app.use(passport.session()); 
+// passport.use(new LocalStrategy(User.authenticate()));
 
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+// passport.serializeUser(User.serializeUser());
+// passport.deserializeUser(User.deserializeUser());
 
 app.use((req, res, next) => {
   res.locals.currentUser = req.user;
@@ -47,7 +48,7 @@ app.use((req, res, next) => {
 })
 
 //Routes will go here
-app.use('/', users);
+app.use('/api/auth', users);
 
 app.all('*', (req, res, next) => {
   next(new ExpressError('Page Not Found', 404))
@@ -61,7 +62,7 @@ app.use((err, req, res, next) => {
   // res.status(statusCode).render('error', { err }) Add this back in when flash is set up
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 app.listen(port, () => {
   console.log(`Serving on Port ${port}`)
 })
