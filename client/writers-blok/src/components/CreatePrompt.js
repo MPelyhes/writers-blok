@@ -2,14 +2,14 @@ import React from 'react';
 
 const CreatePrompt = () => {
   return(
-    <div className="create-prompt-container">
+    <div className="form-container">
       <h3>Create New Prompt</h3>
       <form className="create-prompt-form">
         <div>
           <label htmlFor="title"></label>
-          <input type="text" className="create-title" name="title" placeholder="Title" />
+          <input type="text" className="input" name="title" placeholder="Title" />
         </div>
-        <div >
+        <div>
           <label htmlFor="prompt"></label>
           <textarea className="create-prompt" name="prompt" rows="4" placeholder="Prompt Description" />
         </div>
