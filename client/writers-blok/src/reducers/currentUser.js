@@ -5,12 +5,17 @@ const DEFAULT_STATE = {
   user: {} //all the user info when logged in
 };
 
-const curreUser = (state = DEFAULT_STATE, action) => {
+const currentUser = (state = DEFAULT_STATE, action) => {
   switch (action.type) {
     case SET_CURRENT_USER:
       return {
         //turn empty object into false, or if there are keys, true 
-        isAuthenticated: !!Object.keys(action.user).length
-      }
+        isAuthenticated: !!Object.keys(action.user).length,
+        user: action.user
+      };
+    default:
+      return state;
   }
 }
+
+export default currentUser;
