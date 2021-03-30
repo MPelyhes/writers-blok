@@ -8,8 +8,10 @@ const Auth = ({ buttonText, heading, register, onAuth }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log({email, username, password})
     const authType = register ? 'register' : 'login';
-    onAuth(authType, {email, username, password}).then(() => {
+    console.log(authType)
+    onAuth(authType, email, username, password).then(() => {
       console.log('Logged in successfully!');
     });
   }
