@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return(
@@ -7,10 +8,10 @@ const Navbar = () => {
         Writer's BLOK
       </div>
       <div className="nav-links">
-        <a href='/' className="nav-tags">Browse</a>
-        <a href='/' className="nav-tags">Create</a>
-        <a href='/' className="nav-tags">Read</a>
-        <a href='/' className="nav-tags">Login/Register</a>
+        <Link to='/prompts' className="nav-tags">Browse</Link>
+        <Link to='/prompts/new' className="nav-tags">Create</Link>
+        <Link to='/' className="nav-tags">Read</Link>
+        <Link to='/login' className="nav-tags">Login/Register</Link>
       </div>
     </div>
   )
