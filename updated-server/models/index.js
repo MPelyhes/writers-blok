@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 mongoose.set("debug", true);
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/warblez", {
+mongoose.connect("mongodb://localhost/writersBLOK", {
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true,
@@ -9,4 +9,5 @@ mongoose.connect("mongodb://localhost/warblez", {
 });
 
 module.exports.User = require("./user");
-module.exports.Message = require("./message");
+module.exports.Post = require("./post");
+module.exports.Prompt = require("./prompt")

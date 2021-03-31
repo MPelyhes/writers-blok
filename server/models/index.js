@@ -16,5 +16,5 @@ mongoose.connect('mongodb://localhost/writers-blok', {
 
 //User models exported from the index file!!!
 module.exports.User = require('./user');
-module.exports.Prompt = require('./prompt');
-module.exports.Post = require('./post');
+module.exports.Prompt = require('../../updated-server/models/prompt');
+module.exports.Post = require('../../updated-server/models/post');

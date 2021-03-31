@@ -6,7 +6,7 @@ const catchAsync = require('../utils/catchAsync');
 
 const { register, login } = require('../controllers/users');
 
-router.post('/register', catchAsync(register));
+router.post('/signup', catchAsync(register));
 router.post('/login', catchAsync(login));
 
 module.exports = router;
