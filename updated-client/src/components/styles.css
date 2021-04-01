@@ -99,8 +99,6 @@ h2{
   margin: 0 0 0.5rem 0;
   align-self: flex-start;
   border-bottom: 2px solid #F22E8A;
-  
-
 }
 
 h3{
@@ -111,6 +109,9 @@ h3{
   text-align: center;
 }
 
+p{
+  color: white;
+}
 .prompt {
   margin-bottom: 0.5rem;
   padding: 1rem;
@@ -156,7 +157,6 @@ h3{
 
 .nav-tags:hover {
   color: #A62D7B;
-
   text-shadow:-2.5px 2.5px 0px #252D59,
   -5px 5px 0px #012340;
 }
@@ -285,3 +285,16 @@ h3{
 textarea:focus, input:focus, button:focus{
   outline: none;
 }
+
+.register-link{
+  color: #F22E8A;
+  text-decoration: none;
+  transition: text-shadow 0.25s ease;
+}
+
+.register-link:hover {
+  color: #A62D7B;
+  text-shadow:-1.5px 1.5px 0px #252D59,
+              -3px 3px 0px #012340;
+}
+

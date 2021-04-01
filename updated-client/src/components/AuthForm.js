@@ -1,4 +1,5 @@
 import React, { useState} from "react";
+import { Link } from "react-router-dom";
 
 const AuthForm = ({ buttonText, register, login, heading, onAuth }) => {
   const [email, setEmail] = useState('');
@@ -32,7 +33,7 @@ const AuthForm = ({ buttonText, register, login, heading, onAuth }) => {
               <input className="input" type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)} value={password} required placeholder="Enter Password" />
             </div>
            {login && (
-             <p>Don't have an account?</p>
+             <p>Don't have an account? <Link to="/register" className="register-link">Register Here</Link></p>
            )}
         <button type="submit" className="save-button">{buttonText}</button>
       </form>
