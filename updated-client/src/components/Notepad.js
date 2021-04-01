@@ -1,6 +1,8 @@
 import React from 'react';
+import { connect } from "react-redux";
 
-const Notepad = () => {
+const Notepad = ({ currentUser }) => {
+  // console.log(currentUser.user)
   return (
     <div className="notepad">
       <div className="title">
@@ -12,4 +14,10 @@ const Notepad = () => {
   )
 }
 
-export default Notepad;
+function mapStateToProps(state) {
+  return {
+    currentUser: state.currentUser
+  };
+}
+
+export default connect(mapStateToProps)(Notepad);

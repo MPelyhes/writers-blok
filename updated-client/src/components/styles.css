@@ -223,7 +223,7 @@ a{
   border-top-left-radius: 5px;
   border-bottom-right-radius: 5px;
   border-left: 2px solid #F22E8A;
-  border-bottom: 3px solid #F22E8A;
+  border-bottom: 5px solid hsl(332, 88%, 65%);
   transition: box-shadow 0.5s ease;
 }
 
@@ -259,6 +259,12 @@ a{
 
 .input:hover {
   cursor: pointer;
+  box-shadow: -2.5px 2.5px 0px #A62D7B,
+  -5px 5px 0px #252D59,
+  -7.5px 7.5px 0px #012340;
+}
+
+.input:focus {
   box-shadow: -2.5px 2.5px 0px #A62D7B,
   -5px 5px 0px #252D59,
   -7.5px 7.5px 0px #012340;
@@ -312,20 +318,12 @@ textarea:focus, input:focus, button:focus{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
+  text-align: flex-start;
   width: 80%;
 }
 
-.home-container h1 {
-  color: white;
-  border-bottom: 2px solid #F22E8A;
-  width: fit-content;
-  align-self: center;
-  font-size: 2rem;
-  font-style: italic;
-}
 
-.home-container h3 {
+.home-container h4 {
   color: white;
   font-size: 1.3rem;
   margin-top: 0.8rem;
@@ -336,11 +334,11 @@ textarea:focus, input:focus, button:focus{
   text-decoration: none;
   font-style: italic;
   color: #F22E8A;
-  font-weight: 900;
+  font-weight: 800;
   font-size: 1.3rem;
-    /* text-shadow: -2.5px 2.5px 0px #A62D7B,
-               -5px 5px 0px #252D59,
-               -7.5px 7.5px 0px #012340; */
+  text-shadow: -1.5px 1.5px 0px #252D59;
+                /* -5px 5px 0px #252D59; */
+               /* -7.5px 7.5px 0px #012340;  */
 }
 
 .home-button {

@@ -1,7 +1,8 @@
 import React, { useState} from "react";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router"
 
-const AuthForm = ({ buttonText, register, login, heading, onAuth, errors }) => {
+const AuthForm = ({ buttonText, register, login, heading, onAuth, errors, removeError }) => {
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -13,6 +14,15 @@ const AuthForm = ({ buttonText, register, login, heading, onAuth, errors }) => {
       console.log("LOGGED IN!");
     });
   };
+
+  const history = useHistory();
+
+  if (errors.message) {
+    const unlisten = history.listen(() => {
+      removeError()
+      unlisten()
+    })
+  }
 
   return(
     <div>

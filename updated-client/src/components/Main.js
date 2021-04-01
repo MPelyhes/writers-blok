@@ -6,12 +6,13 @@ import Prompt from "./Prompt"
 import { authUser } from "../store/actions/auth";
 import Navbar from "./Navbar"
 import CreatePrompt from "./CreatePrompt";
-import Home from './Home';
+import Home from "./Home";
+import { removeError } from "../store/actions/errors";
 
-const Main = ({ authUser, errors }) => {
+const Main = ({ authUser, errors, removeError, currentUser }) => {
   return (
     <div className="main">
-      <Navbar />
+      <Navbar currentUser={currentUser} />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/home" component={Home} />
@@ -19,6 +20,7 @@ const Main = ({ authUser, errors }) => {
         <Route exact path="/prompts/new" component={CreatePrompt} />
         <Route exact path="/login">
           <AuthForm
+            removeError={removeError}
             errors={errors}
             login
             onAuth={authUser}
@@ -28,6 +30,7 @@ const Main = ({ authUser, errors }) => {
         </Route>
         <Route exact path="/register">
            <AuthForm
+              removeError={removeError}
               errors={errors}
               register
               onAuth={authUser}
@@ -47,4 +50,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default withRouter(connect(mapStateToProps, { authUser })(Main));
+export default withRouter(connect(mapStateToProps, { authUser, removeError })(Main));
