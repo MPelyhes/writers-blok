@@ -7,15 +7,18 @@ const AuthForm = ({ buttonText, register, login, heading, onAuth, errors, remove
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  const history = useHistory();
+
   const handleSubmit = e => {
     e.preventDefault();
     const authType = register ? "register" : "login";
     onAuth(authType, {email, username, password}).then(() => {
+      history.push("/prompts")
       console.log("LOGGED IN!");
-    });
+    }).catch(() => {
+      return;
+    })
   };
-
-  const history = useHistory();
 
   if (errors.message) {
     const unlisten = history.listen(() => {
