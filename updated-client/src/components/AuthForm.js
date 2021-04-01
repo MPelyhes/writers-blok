@@ -1,14 +1,14 @@
 import React, { useState} from "react";
 import { Link } from "react-router-dom";
 
-const AuthForm = ({ buttonText, register, login, heading, onAuth }) => {
+const AuthForm = ({ buttonText, register, login, heading, onAuth, errors }) => {
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = e => {
     e.preventDefault();
-    const authType = register ? "register" : "signin";
+    const authType = register ? "register" : "login";
     onAuth(authType, {email, username, password}).then(() => {
       console.log("LOGGED IN!");
     });
@@ -17,6 +17,7 @@ const AuthForm = ({ buttonText, register, login, heading, onAuth }) => {
   return(
     <div>
       <h3>{heading}</h3>
+      {errors.message && <div className="error">{errors.message}</div>}
       <form className="form-container" onSubmit={handleSubmit}>
         {register && (
               <div>

@@ -8,8 +8,7 @@ import Navbar from "./Navbar"
 import CreatePrompt from "./CreatePrompt";
 import Home from './Home';
 
-const Main = props => {
-  const { authUser } = props;
+const Main = ({ authUser, errors }) => {
   return (
     <div className="main">
       <Navbar />
@@ -20,6 +19,7 @@ const Main = props => {
         <Route exact path="/prompts/new" component={CreatePrompt} />
         <Route exact path="/login">
           <AuthForm
+            errors={errors}
             login
             onAuth={authUser}
             buttonText="Log in"
@@ -28,6 +28,7 @@ const Main = props => {
         </Route>
         <Route exact path="/register">
            <AuthForm
+              errors={errors}
               register
               onAuth={authUser}
               buttonText="Sign me up!"
@@ -41,7 +42,8 @@ const Main = props => {
 
 function mapStateToProps(state) {
   return {
-    errors: state.errors
+    errors: state.errors,
+    currentUser: state.currentUser
   };
 }
 

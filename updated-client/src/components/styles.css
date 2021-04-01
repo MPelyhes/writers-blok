@@ -64,7 +64,6 @@ body{
   -7.5px 7.5px 0px #012340;
 }
 
-
 textarea{
   font-family: 'Cairo', sans-serif;
   font-weight: 400;
@@ -348,4 +347,28 @@ textarea:focus, input:focus, button:focus{
   margin-top: 3rem;
   max-width: 10rem;
   align-self: center;
+}
+
+.error {
+  /* width: 100%; */
+  color:white;
+  background-color: #F22E8A;
+  text-align: center;
+
+  border: 3px solid rgba(242, 46, 138, 0.85);
+  padding: 0.2rem;;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-left: 2px solid rgba(242, 46, 138, 0.85);
+  border-bottom: 3px solid rgba(242, 46, 138, 0.85);
+   /* box-shadow: -1.5px 1.5px 0px #A62D7B,
+               -3px 3px 0px #252D59,
+               -4.5px 4.5px 0px #012340; */
+  transition: box-shadow 0.5s ease;
+}
+
+.save-button:hover {
+  box-shadow: -1.5px 1.5px 0px #A62D7B,
+               -3px 3px 0px #252D59,
+               -4.5px 4.5px 0px #012340;
 }
