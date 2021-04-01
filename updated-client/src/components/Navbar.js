@@ -1,16 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import { logout } from  "../store/actions/auth";
 
 
-const Navbar = ({ currentUser }) => {
-  console.log(currentUser.user)
+const Navbar = ({ currentUser, logout }) => {
+
 
  const authLink = () =>{
   if(!currentUser.isAuthenticated){
     return <Link to='/login' className="nav-tags">Login/Register</Link>
   }
-  return <Link to='/login' className="nav-tags">Logout</Link>
+  return <Link onClick={logout} className="nav-tags">Logout</Link>
  } 
   return(
     <div className="navbar">
@@ -33,4 +34,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Navbar);
+export default connect(mapStateToProps, { logout })(Navbar);
