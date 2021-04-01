@@ -6,6 +6,7 @@ import Prompt from "./Prompt"
 import { authUser } from "../store/actions/auth";
 import Navbar from "./Navbar"
 import CreatePrompt from "./CreatePrompt";
+import Home from './Home';
 
 const Main = props => {
   const { authUser } = props;
@@ -13,7 +14,8 @@ const Main = props => {
     <div className="main">
       <Navbar />
       <Switch>
-        <Route exact path="/" component={Prompt} />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/home" component={Home} />
         <Route exact path="/prompts" component={Prompt} />
         <Route exact path="/prompts/new" component={CreatePrompt} />
         <Route exact path="/login">
