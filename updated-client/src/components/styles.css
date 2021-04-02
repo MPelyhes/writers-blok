@@ -330,7 +330,8 @@ textarea:focus, input:focus, button:focus{
 
 .home-container h4 {
   color: white;
-  font-size: 1.3rem;
+  font-size: 1.15rem;
+  font-weight: 700;
   margin-top: 0.8rem;
   margin-bottom: 0.8rem;
 }
@@ -339,8 +340,8 @@ textarea:focus, input:focus, button:focus{
   text-decoration: none;
   font-style: italic;
   color: #F22E8A;
-  font-weight: 800;
-  font-size: 1.3rem;
+  font-weight: 700;
+  font-size: 1.15rem;
   text-shadow: -1.5px 1.5px 0px #252D59;
                 /* -5px 5px 0px #252D59; */
                /* -7.5px 7.5px 0px #012340;  */

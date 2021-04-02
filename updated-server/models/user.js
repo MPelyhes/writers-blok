@@ -16,13 +16,16 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  profileImageUrl: {
-    type: String
-  },
-  messages: [
+  prompts: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Message"
+      ref: "Prompt"
+    }
+  ],
+  posts: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Post"
     }
   ]
 });

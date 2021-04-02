@@ -9,14 +9,6 @@ const PromptSchema = new mongoose.Schema({
   author: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
-  },
-  posts: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Post'
-  }],
-  background: {
-    type: String,
-    required: true
   }
 });
 
