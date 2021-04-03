@@ -7,7 +7,7 @@ import PromptItem from "./PromptItem";
 const Prompt = ({ fetchPrompts, prompts }) => {
 
   useEffect(()=> {
-    fetchPrompts()
+    fetchPrompts({})
   })
 
   let promptList = prompts.map(p => {
