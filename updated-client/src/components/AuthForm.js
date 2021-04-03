@@ -1,6 +1,6 @@
 import React, { useState} from "react";
 import { Link } from "react-router-dom";
-import { useHistory } from "react-router"
+import { useHistory } from "react-router";
 
 const AuthForm = ({ buttonText, register, login, heading, onAuth, errors, removeError }) => {
   const [email, setEmail] = useState('');
@@ -13,7 +13,7 @@ const AuthForm = ({ buttonText, register, login, heading, onAuth, errors, remove
     e.preventDefault();
     const authType = register ? "register" : "login";
     onAuth(authType, {email, username, password}).then(() => {
-      history.push("/prompts")
+      history.push("/home")
       console.log("LOGGED IN!");
     }).catch(() => {
       return;
@@ -30,7 +30,7 @@ const AuthForm = ({ buttonText, register, login, heading, onAuth, errors, remove
   return(
     <div>
       <h3>{heading}</h3>
-      {errors.message && <div className="error">{errors.message}</div>}
+      {errors.message && <div className="error">{errors}</div>}
       <form className="form-container" onSubmit={handleSubmit}>
         {register && (
               <div>

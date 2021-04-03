@@ -1,17 +1,19 @@
 import React, { useState } from "react";
-import { connect } from "react-redux"
-import { postPrompt } from "../store/actions/prompts"
+import { connect } from "react-redux";
+import { postPrompt } from "../store/actions/prompts";
+import { useHistory } from "react-router";
 
 const CreatePrompt = ({ currentUser, errors, postPrompt }) => {
  const [title, setTitle]  = useState("");
  const [prompt, setPrompt] = useState("");
 
+ const history = useHistory();
  const { username, id }  = currentUser.user;
 
  const handleSubmit = (e) => {
    e.preventDefault(); 
    postPrompt({ title, prompt, username, id }).then(() => {
-    history.push("/prompts")
+    history.push("/home")
     console.log("Posted!");
    }).catch(() => {
     return;

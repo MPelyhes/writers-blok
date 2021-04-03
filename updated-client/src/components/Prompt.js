@@ -7,13 +7,14 @@ import PromptItem from "./PromptItem";
 const Prompt = ({ fetchPrompts, prompts }) => {
 
   useEffect(()=> {
-    fetchPrompts({})
-  })
+    fetchPrompts()
+  }, []);
+ console.log(prompts)
 
   let promptList = prompts.map(p => {
     return <PromptItem 
       key={p._id}
-      text={p.text}
+      text={p.prompt}
       title={p.title}
       author={p.author}
     />

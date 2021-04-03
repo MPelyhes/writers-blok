@@ -17,24 +17,11 @@ exports.createPrompt = async function(req, res, next) {
   }
 }
 
-// module.exports.createPrompt = async (req, res, next) => {
-//   try {
-//     const user = await User.findById(req.params.id);
-//     const prompt = new Prompt(req.body.prompt);
-//     prompt.author = req.user.username;
-//     user.prompts.push(prompt._id);
-//     await prompt.save();
-//     await user.save();
-//     console.log(prompt);
-//   } catch (err) {
-//     return next(err);
-//   }
-// };
-
-
 exports.getPrompt = async function (req, res, next){
+  console.log("We made it");
   try{
-    const prompts = await Prompt.find({});
+    const prompts = await db.Prompt.find({});
+    console.log({prompts})
     return res.status(200).json(prompts);
   } catch (err) {
     return next(err);

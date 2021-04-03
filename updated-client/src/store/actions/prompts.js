@@ -8,8 +8,11 @@ export const loadPrompts = (prompts) => ({
 });
 
 export const fetchPrompts = () => {
+  console.log("here")
   return dispatch => {
-    return apiCall("get", "/api/prompt").then(function(res) {
+    console.log("here2")
+    return apiCall("get", `/api/prompt`).then(function(res) {
+      console.log("here3")
       dispatch(loadPrompts(res));
     })
     .catch(function(err) {
@@ -20,8 +23,8 @@ export const fetchPrompts = () => {
 
 export const postPrompt = (prompt) => (dispatch) => {
   console.log(prompt)
-  return apiCall("post", `/api/prompt`, prompt).then((res) => {})
-  .catch((err) => dispatch(addError(err.message)));
+  return apiCall("post", `/api/prompt`, prompt).then(res => {})
+  .catch(err => dispatch(addError(err.message)))
 }
 
 
