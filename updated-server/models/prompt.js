@@ -6,9 +6,14 @@ const PromptSchema = new mongoose.Schema({
     required: true,
     maxLength: 160
   },
+  title: {
+    type: String,
+    required: true,
+    maxLength: 30
+  },
   author: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
+    type: String,
+    required: true
   }
 });
 

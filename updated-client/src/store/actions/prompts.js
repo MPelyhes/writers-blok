@@ -9,6 +9,11 @@ export const loadPrompts = (prompts) => ({
 
 export const fetchPrompts = () => {
   return dispatch => {
-    return apiCall("GET", "/api/prompt").then(res => dispatch(loadPrompts(res).catch(err => addError(err.message))))
-  }
-}
+    return apiCall("get", "/api/prompt").then(function(res) {
+      dispatch(loadPrompts(res));
+    })
+    .catch(function(err) {
+      dispatch(addError(err.message))
+    });
+  };
+};

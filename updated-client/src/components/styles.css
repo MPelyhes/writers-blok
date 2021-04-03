@@ -323,7 +323,7 @@ textarea:focus, input:focus, button:focus{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: flex-start;
+  text-align: center;
   width: 80%;
 }
 

@@ -22,8 +22,8 @@ const db = require("../models");
 module.exports.createPrompt = async (req, res, next) => {
   try {
     const user = await User.findById(req.params.id);
-    const prompt = new Prompt(req.body.text);
-    prompt.author = req.user._id;
+    const prompt = new Prompt(req.body.prompt);
+    prompt.author = req.user.username;
     user.prompts.push(prompt._id);
     await prompt.save();
     await user.save();
