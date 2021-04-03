@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const PromptSchema = new mongoose.Schema({
-  text: {
+  prompt: {
     type: String,
     required: true,
     maxLength: 160

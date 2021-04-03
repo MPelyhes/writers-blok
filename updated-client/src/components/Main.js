@@ -19,7 +19,7 @@ const Main = ({ authUser, errors, removeError, currentUser }) => {
         <Route exact path="/prompts" component={Prompt} />
         <Route exact path="/prompts/new"> 
         <CreatePrompt 
-          currentUser={currentUser}
+          
         />
         </Route>
         <Route exact path="/login">

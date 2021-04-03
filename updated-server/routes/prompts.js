@@ -5,7 +5,7 @@ const { loginRequired } = require("../middleware/auth");
 const { createPrompt, getPrompt } = require("../handlers/prompt");
 
 router.route("/")
-  .post(loginRequired, createPrompt)
+  .post(createPrompt)
   .get(getPrompt);
 
 

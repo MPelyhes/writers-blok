@@ -17,3 +17,11 @@ export const fetchPrompts = () => {
     });
   };
 };
+
+export const postPrompt = (prompt) => (dispatch) => {
+  console.log(prompt)
+  return apiCall("post", `/api/prompt`, prompt).then((res) => {})
+  .catch((err) => dispatch(addError(err.message)));
+}
+
+
