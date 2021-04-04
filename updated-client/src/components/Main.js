@@ -8,15 +8,20 @@ import Navbar from "./Navbar"
 import CreatePrompt from "./CreatePrompt";
 import Home from "./Home";
 import { removeError } from "../store/actions/errors";
+import PromptItem from "./PromptItem";
 
-const Main = ({ authUser, errors, removeError, currentUser }) => {
+const Main = ({ authUser, errors, removeError, currentUser, onPromptSelect}) => {
   return (
     <div className="main">
       <Navbar currentUser={currentUser} />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/home" component={Home} />
-        <Route exact path="/prompts" component={Prompt} />
+        <Route exact path="/prompts">
+          <Prompt 
+            onPromptSelect={onPromptSelect}
+          />
+        </Route>
         <Route exact path="/prompts/new"> 
         <CreatePrompt 
           

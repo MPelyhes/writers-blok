@@ -4,7 +4,7 @@ import { fetchPrompts } from "../store/actions/prompts";
 import PromptItem from "./PromptItem";
 
 
-const Prompt = ({ fetchPrompts, prompts }) => {
+const Prompt = ({ fetchPrompts, prompts, onPromptSelect }) => {
 
   useEffect(()=> {
     fetchPrompts()
@@ -14,6 +14,7 @@ const Prompt = ({ fetchPrompts, prompts }) => {
   let promptList = prompts.map(p => {
     return <PromptItem 
       key={p._id}
+      onPromptSelect={onPromptSelect}
       text={p.prompt}
       title={p.title}
       author={p.author}
@@ -21,16 +22,6 @@ const Prompt = ({ fetchPrompts, prompts }) => {
   })
 
   return (
-    // <div className="prompt-container">
-    //   <h2>Title</h2>
-    //   <div className="prompt">
-    //     This is where a really cool description of the prompt would go! I would put lorem ipsum
-    //     text here, but I forgot how to do that quickly using emmett. Oh well!
-    //   </div>
-    //   <div className="prompt-author">
-    //     Submitted by <span className="colon">:</span> Matt Pelyhes
-    //   </div>
-    // </div>
     <div>
       {promptList}
     </div>
