@@ -8,7 +8,7 @@ import Navbar from "./Navbar"
 import CreatePrompt from "./CreatePrompt";
 import Home from "./Home";
 import { removeError } from "../store/actions/errors";
-import PromptItem from "./PromptItem";
+import Posts from "./Posts";
 
 const Main = ({ authUser, errors, removeError, currentUser, onPromptSelect}) => {
   return (
@@ -26,6 +26,10 @@ const Main = ({ authUser, errors, removeError, currentUser, onPromptSelect}) => 
         <CreatePrompt 
           
         />
+        </Route>
+        <Route exact path="/posts">
+          <Posts
+          />
         </Route>
         <Route exact path="/login">
           <AuthForm

@@ -27,7 +27,7 @@ const history = useHistory();
       <div className="nav-links">
         <Link to='/prompts' className="nav-tags">Browse</Link>
         <Link to='/prompts/new' className="nav-tags">Create</Link>
-        <Link to='/' className="nav-tags">Read</Link>
+        <Link to='/posts' className="nav-tags">Posts</Link>
         {authLink()}
       </div>
     </div>

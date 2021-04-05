@@ -13,7 +13,7 @@ const PromptItem = ({ prompt, title, author, onPromptSelect }) => {
         Submitted by <span className="colon">:</span> {author || "Matt Pelyhes"}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default PromptItem;

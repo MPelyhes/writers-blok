@@ -18,11 +18,12 @@ exports.createPost = async function(req, res, next){
 }
 
 exports.getPosts = async function (req, res, next){
-  console.log(req.body);
+  const { id} = (req.params);
+  console.log(id)
   try{
-    let userPosts = await db.User.findById(req.body.id).populate("posts");
-    console.log(userPosts);
-    return res.status(200).json(userPosts);
+    let userPosts = await db.User.findById(id).populate("posts");
+    console.log(userPosts.posts);
+    return res.status(200).json(userPosts.posts);
   } catch(err) {
     return next(err);
   }

@@ -1,12 +1,12 @@
 import { LOAD_POSTS } from "../actionTypes";
 
-const post = (state = [], action) => {
+const posts = (state = [], action) => {
   switch (action.type){
     case LOAD_POSTS:
-      return [...action.post];
+      return [...action.posts];
     default:
       return state;
   }
 };
 
-export default post;
+export default posts;

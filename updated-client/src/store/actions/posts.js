@@ -7,9 +7,9 @@ export const loadPosts = (posts) => ({
   posts
 });
 
-export const fetchPosts = (req) => {
+export const fetchPosts = (id) => {
   //Need to actually figure out how we are getting this id here
-  let {id} = req;
+  console.log(id)
   return dispatch =>{
     // Need to add an id to a route to only get the posts for one specific user
     return apiCall("get", `/api/posts/${id}`).then(function(res) {
