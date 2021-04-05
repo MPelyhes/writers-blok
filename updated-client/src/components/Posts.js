@@ -17,6 +17,7 @@ const Posts = ({ fetchPosts, posts, currentUser }) => {
       key={p._id}
       title={p.title}
       post={p.post}
+      created={p.createdAt}
     />
   })
 
