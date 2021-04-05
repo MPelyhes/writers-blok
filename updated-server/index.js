@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 const errorHandler = require("./handlers/error");
 const authRoutes = require("./routes/auth");
 const promptRoutes = require("./routes/prompts");
+const postRoutes = require("./routes/posts");
 const messagesRoutes = require("./routes/messages");
 const { loginRequired, ensureCorrectUser } = require("./middleware/auth");
 const db = require("./models");
@@ -17,6 +18,7 @@ app.use(bodyParser.json());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/prompt", promptRoutes)
+app.use("/api/posts/:id", postRoutes);
 app.use(
   "/api/users/:id/messages",
   loginRequired,

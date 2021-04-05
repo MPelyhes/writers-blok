@@ -1,6 +1,6 @@
 import { apiCall } from "../../services/api";
 import { addError } from "./errors";
-import { LOAD_PROMPTS, REMOVE_POMPT } from "../actionTypes";
+import { LOAD_PROMPTS, REMOVE_PROMPT } from "../actionTypes";
 
 export const loadPrompts = (prompts) => ({
   type: LOAD_PROMPTS,
