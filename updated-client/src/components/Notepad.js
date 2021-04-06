@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+
+import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { useHistory } from "react-router";
 import { submitPost } from "../store/actions/posts"
+import Alert from "./Alert";
 
 
 const Notepad = ({ currentUser, prompt, submitPost, errors }) => {
@@ -17,7 +20,9 @@ const Notepad = ({ currentUser, prompt, submitPost, errors }) => {
     console.log("clicked")
     await submitPost({id, title, post}).then(()=> {
       history.push("/");
-      console.log("We posted it! Nice!")
+      setPost("");
+      console.log("We posted it! Nice!") 
+      {Alert("Success!", "Your post has been saved. You can revisit previous posts by clicking the posts link.")}
     }).catch((err) => {
       return;
     })
@@ -28,7 +33,7 @@ const Notepad = ({ currentUser, prompt, submitPost, errors }) => {
       <div className="title">
         <h1>{prompt || "Title"}</h1><span className="blinking-cursor">|</span>
       </div>
-      <textarea name="post" rows="40" cols="50" placeholder="Select a prompt to begin your writing warm-up" onChange={(e) => setPost(e.target.value)}></textarea>
+      <textarea name="post" rows="40" cols="50" placeholder="Select a prompt to begin your writing warm-up" onChange={(e) => setPost(e.target.value)} value={post}></textarea>
       {currentUser.isAuthenticated && (
         <button type="submit" className="save-button" onClick={handleSubmit}>Save</button> 
       )}

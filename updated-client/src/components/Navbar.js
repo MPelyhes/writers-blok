@@ -29,7 +29,7 @@ const history = useHistory();
   return(
     <div className="navbar">
       <div className="logo">
-        <Link to='/home' className="logo-link">Writer's BLOC</Link>
+        <Link to='/home' className="logo-link">Writer's BLOK</Link>
       </div>
       <div className="nav-links">
         <Link to='/prompts' className="nav-tags">Prompts</Link>

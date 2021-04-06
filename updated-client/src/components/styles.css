@@ -42,7 +42,8 @@ body{
 
 .prompt-container{
   height: 8rem;
-  max-width: 30rem;
+  max-width: 40rem;
+  height: fit-content;
   margin: 1.5rem;
   padding: 2rem;
   border-radius: 15px;
@@ -369,4 +370,34 @@ textarea:focus, input:focus, button:focus{
                -3px 3px 0px #252D59,
                -4.5px 4.5px 0px #012340; */
   transition: box-shadow 0.5s ease;
+}
+
+.swal2-header h2{
+  align-self: center;
+}
+
+.swal2-container button {
+  padding: 0 !important;
+  border: none !important;
+  font: inherit !important;
+  font-weight: 700 !important;
+  color: white !important;
+  background-color: #F22E8A !important;
+  cursor: pointer !important;
+  margin-top: 1rem !important;
+  border: 3px solid #F22E8A !important;
+  padding: 0.25rem 0.5rem !important;
+  border-top-left-radius: 5px !important;
+  border-bottom-right-radius: 5px !important;
+  border-top-right-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+  border-left: 2px solid #F22E8A !important;
+  border-bottom: 5px solid hsl(332, 88%, 65%) !important;
+  transition: box-shadow 0.5s ease !important;
+}
+
+.swal2-container button:hover {
+  box-shadow: -1.5px 1.5px 0px #A62D7B ,
+               -3px 3px 0px #252D59 ,
+               -4.5px 4.5px 0px #012340 !important;
 }
