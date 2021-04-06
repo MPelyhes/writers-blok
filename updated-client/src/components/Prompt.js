@@ -12,6 +12,7 @@ const Prompt = ({ fetchPrompts, prompts, onPromptSelect, selectedPrompt }) => {
  console.log(prompts)
 
   let promptList = prompts.map(p => {
+    console.log(text)
     return <PromptItem 
       key={p._id}
       onPromptSelect={onPromptSelect}
