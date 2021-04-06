@@ -1,6 +1,7 @@
 import React, { useState} from "react";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
+import Alert from "./Alert";
 
 const AuthForm = ({ buttonText, register, login, heading, onAuth, errors, removeError }) => {
   const [email, setEmail] = useState('');
@@ -13,6 +14,11 @@ const AuthForm = ({ buttonText, register, login, heading, onAuth, errors, remove
     e.preventDefault();
     const authType = register ? "register" : "login";
     onAuth(authType, {email, username, password}).then(() => {
+      if(register){
+        Alert("Welcome!", "Thank you for joining Writer's BLOK! We're glad to have you here. Happy writing!")
+      } else{
+        Alert("Welcome Back!", "Happy writing!")
+      }
       history.push("/home")
       console.log("LOGGED IN!");
     }).catch(() => {

@@ -374,7 +374,9 @@ textarea:focus, input:focus, button:focus{
 
 .swal2-header h2{
   align-self: center;
+  color: #012340;
 }
+
 
 .swal2-container button {
   padding: 0 !important;
