@@ -28,7 +28,7 @@ const App = () => {
     <Provider store={store}>
       <Router>
         <div className="app-container">
-          <Main onPromptSelect={setSelectedPrompt} />
+          <Main onPromptSelect={setSelectedPrompt} prompt={selectedPrompt} />
           <Notepad prompt={selectedPrompt} />
         </div>
       </Router>

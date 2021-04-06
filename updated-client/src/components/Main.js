@@ -10,7 +10,7 @@ import Home from "./Home";
 import { removeError } from "../store/actions/errors";
 import Posts from "./Posts";
 
-const Main = ({ authUser, errors, removeError, currentUser, onPromptSelect}) => {
+const Main = ({ authUser, errors, removeError, currentUser, onPromptSelect, prompt}) => {
   return (
     <div className="main">
       <Navbar currentUser={currentUser} />
@@ -20,6 +20,7 @@ const Main = ({ authUser, errors, removeError, currentUser, onPromptSelect}) => 
         <Route exact path="/prompts">
           <Prompt 
             onPromptSelect={onPromptSelect}
+            selectedPrompt={prompt} 
           />
         </Route>
         <Route exact path="/prompts/new"> 
