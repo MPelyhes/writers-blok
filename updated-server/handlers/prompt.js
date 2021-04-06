@@ -20,7 +20,8 @@ exports.createPrompt = async function(req, res, next) {
 exports.getPrompt = async function (req, res, next){
   console.log("We made it");
   try{
-    const prompts = await db.Prompt.find({});
+    //Get all the prompts from the database and sort them in descending order so that users will see the most recent prompts first
+    const prompts = await db.Prompt.find({}).sort({createdAt: "desc"})
     console.log({prompts})
     return res.status(200).json(prompts);
   } catch (err) {

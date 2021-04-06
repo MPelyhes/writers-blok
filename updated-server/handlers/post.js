@@ -21,7 +21,8 @@ exports.getPosts = async function (req, res, next){
   const { id} = (req.params);
   console.log(id)
   try{
-    let userPosts = await db.User.findById(id).populate("posts");
+    //Get all the posts from the database and sort them in descending order so that users will see the most recent posts first
+    let userPosts = await db.User.findById(id).populate({path: "posts", options: { sort: {createdAt: "desc"} }});
     console.log(userPosts.posts);
     return res.status(200).json(userPosts.posts);
   } catch(err) {
