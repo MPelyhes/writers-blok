@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { useHistory } from "react-router";
 import { postPrompt } from "../store/actions/prompts";
+import Alert from "./Alert";
 
 const CreatePrompt = ({ currentUser, errors, postPrompt }) => {
   
@@ -14,6 +15,7 @@ const CreatePrompt = ({ currentUser, errors, postPrompt }) => {
  const handleSubmit = async (e) => {
    e.preventDefault(); 
    await postPrompt({ title, prompt, username, id }).then(() => {
+     Alert("Success!", "Thank you! Sharing your writing prompt ideas helps kick-start the writing process for others in the Writer's BLOK community.")
     history.push("/prompts")
     console.log("Posted!");
    }).catch((err) => {
