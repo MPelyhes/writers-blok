@@ -10,12 +10,18 @@ const CreatePrompt = ({ currentUser, errors, postPrompt }) => {
   
  const [title, setTitle]  = useState("");
  const [prompt, setPrompt] = useState("");
+ const [titleValid, setTitleValid] = useState(true);
+ const [promptValid, setPromptValid] = useState(true);
 
  const history = useHistory();
  const { username, id }  = currentUser.user;
 
+
  const handleSubmit = async (e) => {
    e.preventDefault(); 
+   if(!titleValid || !promptValid){
+     return Alert("Uh oh!", "It looks like your prompt could use some shortening!")
+   }
    await postPrompt({ title, prompt, username, id }).then(() => {
      Alert("Success!", "Thank you! Sharing your writing prompt ideas helps kick-start the writing process for others in the Writer's BLOK community.")
     history.push("/prompts")
@@ -37,12 +43,12 @@ const CreatePrompt = ({ currentUser, errors, postPrompt }) => {
           <label htmlFor="title"></label>
           <input type="text" className="input" name="title" placeholder="Title"  onChange={(e) => setTitle(e.target.value)} value={title}/>
         </div>
-        {title.length > 0 ? CharacterCounter(30, title): ""}
+        {title.length > 0 &&( <CharacterCounter maxChar={30} currentStr={title} setValid={setTitleValid} /> )}
         <div>
           <label htmlFor="prompt"></label>
           <textarea className="create-prompt" name="prompt" rows="4" placeholder="Prompt Description" onChange={(e) => setPrompt(e.target.value)}  value={prompt} />
         </div>
-        {prompt.length > 0 ? CharacterCounter(300, prompt): ""}
+        {prompt.length > 0 &&( <CharacterCounter maxChar={300} currentStr={prompt} setValid={setPromptValid} /> )}
         {currentUser.user.username && (<button type="submit" className="save-button">Save</button>)}      
       </form>
     </div>
