@@ -4,7 +4,7 @@ const PromptSchema = new mongoose.Schema({
   prompt: {
     type: String,
     required: true,
-    maxLength: 160
+    maxLength: 300
   },
   title: {
     type: String,

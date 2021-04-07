@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { useHistory } from "react-router";
 import { postPrompt } from "../store/actions/prompts";
 import Alert from "./Alert";
+import CharacterCounter from "./CharacterCounter";
+
 
 const CreatePrompt = ({ currentUser, errors, postPrompt }) => {
   
@@ -35,10 +37,12 @@ const CreatePrompt = ({ currentUser, errors, postPrompt }) => {
           <label htmlFor="title"></label>
           <input type="text" className="input" name="title" placeholder="Title"  onChange={(e) => setTitle(e.target.value)} value={title}/>
         </div>
+        {CharacterCounter(30, title)}
         <div>
           <label htmlFor="prompt"></label>
           <textarea className="create-prompt" name="prompt" rows="4" placeholder="Prompt Description" onChange={(e) => setPrompt(e.target.value)}  value={prompt} />
         </div>
+        {CharacterCounter(300, prompt)}
         {currentUser.user.username && (<button type="submit" className="save-button">Save</button>)}      
       </form>
     </div>

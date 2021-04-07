@@ -263,7 +263,7 @@ a{
   border-bottom-right-radius: 2px;
   border-left: 2px solid #F22E8A;
   border-bottom: 3px solid #F22E8A;
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
   color: white;
   font-size: 1.5rem;
   transition: box-shadow 0.2s ease;
@@ -408,4 +408,23 @@ textarea:focus, input:focus, button:focus{
   box-shadow: -1.5px 1.5px 0px #A62D7B ,
                -3px 3px 0px #252D59 ,
                -4.5px 4.5px 0px #012340 !important;
+}
+
+.character-alert{
+  color: white;
+  font-size: 1rem;
+  margin: 1rem 0rem;
+  text-align:end;
+}
+
+.character-alert-positive {
+  display: inline-block;
+  color: greenyellow;
+  text-shadow:  -0.5px 0.5px 0px greenyellow;
+}
+
+.character-alert-negative {
+  display: inline-block;
+  color: rgb(255, 0, 55);
+  text-shadow:  -0.5px 0.5px 0px rgb(255, 0, 55);
 }
