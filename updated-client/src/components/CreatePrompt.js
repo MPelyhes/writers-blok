@@ -37,12 +37,12 @@ const CreatePrompt = ({ currentUser, errors, postPrompt }) => {
           <label htmlFor="title"></label>
           <input type="text" className="input" name="title" placeholder="Title"  onChange={(e) => setTitle(e.target.value)} value={title}/>
         </div>
-        {CharacterCounter(30, title)}
+        {title.length > 0 ? CharacterCounter(30, title): ""}
         <div>
           <label htmlFor="prompt"></label>
           <textarea className="create-prompt" name="prompt" rows="4" placeholder="Prompt Description" onChange={(e) => setPrompt(e.target.value)}  value={prompt} />
         </div>
-        {CharacterCounter(300, prompt)}
+        {prompt.length > 0 ? CharacterCounter(300, prompt): ""}
         {currentUser.user.username && (<button type="submit" className="save-button">Save</button>)}      
       </form>
     </div>
