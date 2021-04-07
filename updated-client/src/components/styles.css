@@ -125,11 +125,11 @@ a{
 }
 .prompt {
   margin-bottom: 0.5rem;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 0;
 }
 
 .prompt-author {
-  align-self: flex-end;
+  align-self: center;
   font-size: 0.75rem;
   font-weight: 600;
 }
@@ -456,4 +456,21 @@ textarea:focus, input:focus, button:focus{
 .icon-container:hover {
   background-color: rgba(242, 46, 138, 0.5);
   box-shadow: 0 0 0 3px rgba(242, 46, 138, 0.5);
+}
+
+.prompt-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.like-container{
+  display: flex;
+  text-align: center;
+}
+
+.total-likes{
+  margin-top: 5px;
+  margin-left: 6px;
 }

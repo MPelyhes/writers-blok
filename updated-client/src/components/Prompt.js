@@ -18,6 +18,7 @@ const Prompt = ({ fetchPrompts, prompts, onPromptSelect, selectedPrompt }) => {
       selectedPrompt={selectedPrompt}
       text={p.prompt}
       title={p.title}
+      likes={p.likes}
       author={p.author}
     />
   })
