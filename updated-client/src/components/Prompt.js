@@ -1,10 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { fetchPrompts } from "../store/actions/prompts";
 import PromptItem from "./PromptItem";
 
 
 const Prompt = ({ fetchPrompts, prompts, onPromptSelect, selectedPrompt }) => {
+  const [sortSelect, setSortSelect] = useState("newest")
+
   useEffect(()=> {
     fetchPrompts()
   }, []);
@@ -22,14 +24,18 @@ const Prompt = ({ fetchPrompts, prompts, onPromptSelect, selectedPrompt }) => {
     />
   })
 
+  const newest = "newest";
+  const mostPopular = "most-popular";
+
+
   return (
     <div>
       <h3>Select a Prompt</h3>
       <div className="sort-container">
         <div className="sort-title">Sort By <span className="colon">:</span></div>
         <div className="sort-options-container">
-          <div className="sort-option sort-option-selected">Newest</div>
-          <div className="sort-option">Most<span> </span>Popular</div>
+          <div  className={sortSelect === newest ? "sort-option sort-option-selected" :"sort-option" } onClick={() => setSortSelect(newest)}>Newest</div>
+          <div className={sortSelect === mostPopular ? "sort-option sort-option-selected" :"sort-option" }  onClick={() => setSortSelect(mostPopular)}>Most<span> </span>Popular</div>
         </div>
       </div>
       {promptList}
