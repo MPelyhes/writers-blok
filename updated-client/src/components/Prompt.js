@@ -25,6 +25,13 @@ const Prompt = ({ fetchPrompts, prompts, onPromptSelect, selectedPrompt }) => {
   return (
     <div>
       <h3>Select a Prompt</h3>
+      <div className="sort-container">
+        <div className="sort-title">Sort By <span className="colon">:</span></div>
+        <div className="sort-options-container">
+          <div className="sort-option sort-option-selected">Newest</div>
+          <div className="sort-option">Most<span> </span>Popular</div>
+        </div>
+      </div>
       {promptList}
     </div>
   )

@@ -225,7 +225,6 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("
 
 .save-button{
   padding: 0;
-  border: none;
   font: inherit;
   font-weight: 700;
   color: white;
@@ -476,4 +475,55 @@ textarea:focus, input:focus, button:focus{
   height: 20px;
   width: 20px;
   color: rgba(255, 255, 255, 0.8);
+}
+
+.sort-container{
+  display:flex;
+  align-items: center;
+  text-align: center;
+}
+
+.sort-options-container{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3px;
+  width: fit-content;
+}
+
+.sort-option{
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  margin-left:1rem;
+  padding: 0.15rem 0.5rem;
+  border: 3px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 2px solid transparent;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transition: background 0.2s ease;
+  
+}
+
+.sort-option-selected{
+  background-color: hsl(332, 88%, 65%);
+  border: 3px solid #F22E8A;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-left: 2px solid #F22E8A;
+  border-bottom: 5px solid hsl(332, 88%, 65%);
+  
+}
+.sort-option:hover{
+  background-color: #F22E8A;
+  border: 3px solid #F22E8A;
+  border-left: 2px solid #F22E8A;
+  border-bottom: 5px solid hsl(332, 88%, 65%);
+  cursor: pointer;
+}
+
+.sort-title{
+  margin-right: 1rem;
+  font-weight: 800;
+  color: white;
 }
