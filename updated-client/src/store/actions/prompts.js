@@ -7,19 +7,17 @@ export const loadPrompts = (prompts) => ({
   prompts
 });
 
-export const fetchPrompts = () => {
-  console.log("here")
-  return dispatch => {
-    console.log("here2")
-    return apiCall("get", `/api/prompt`).then(function(res) {
+export const fetchPrompts = (sortSelect) => (dispatch) => {
+    console.log(sortSelect)
+    return apiCall("post", `/api/prompt/fetch`, sortSelect).then(function(res) {
       console.log("here3")
       dispatch(loadPrompts(res));
     })
     .catch(function(err) {
       dispatch(addError(err.message))
     });
-  };
 };
+
 
 export const postPrompt = (prompt) => (dispatch) => {
   console.log(prompt)

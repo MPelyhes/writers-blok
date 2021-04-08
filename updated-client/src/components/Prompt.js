@@ -5,11 +5,11 @@ import PromptItem from "./PromptItem";
 
 
 const Prompt = ({ fetchPrompts, prompts, onPromptSelect, selectedPrompt }) => {
-  const [sortSelect, setSortSelect] = useState("newest")
+  const [sortSelect, setSortSelect] = useState("createdAt")
 
   useEffect(()=> {
-    fetchPrompts()
-  }, []);
+    fetchPrompts({sortSelect})
+  }, [sortSelect]);
 
   let promptList = prompts.map(p => {
     return <PromptItem 
@@ -24,8 +24,8 @@ const Prompt = ({ fetchPrompts, prompts, onPromptSelect, selectedPrompt }) => {
     />
   })
 
-  const newest = "newest";
-  const mostPopular = "most-popular";
+  const newest = "createdAt";
+  const mostPopular = "likes";
 
 
   return (

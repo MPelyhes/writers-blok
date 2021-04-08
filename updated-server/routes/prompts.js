@@ -6,7 +6,8 @@ const { createPrompt, getPrompt, updatePromptLikes } = require("../handlers/prom
 
 router.route("/")
   .post(createPrompt)
-  .get(getPrompt);
+
+router.route("/fetch").post(getPrompt)
 
 router.route("/:id").put(updatePromptLikes);
 
