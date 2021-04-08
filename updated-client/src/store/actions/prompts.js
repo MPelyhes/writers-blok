@@ -27,4 +27,9 @@ export const postPrompt = (prompt) => (dispatch) => {
   .catch(err => dispatch(addError(err.message)))
 }
 
+export const updatePromptLikes = (prompt) => (dispatch) => {
+  console.log(prompt)
+  return apiCall("put", `/api/prompt/${prompt.id}`, prompt).then(res => {})
+  .catch(err => dispatch(addError(err.message)))
+}
 

@@ -1,20 +1,30 @@
 import React, {useState} from "react";
+import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp as liked } from "@fortawesome/free-solid-svg-icons";
 import {faThumbsUp as notLiked } from "@fortawesome/free-regular-svg-icons"
+import { updatePromptLikes } from "../store/actions/prompts";
 
-const PromptItem = ({ text, title, author, likes, onPromptSelect, selectedPrompt }) => {
+const PromptItem = ({ text, title, author, likes, id, onPromptSelect, selectedPrompt, updatePromptLikes }) => {
   const [likeButton, setLikedButton] = useState(false);
   const [pseudoLikes, setPseudoLikes] = useState(likes);
 
-  const handleLike = () => {
+
+  const handleLike = async (e) => {
+    // e.preventDefault(); 
     if(likeButton){
       setLikedButton(false)
       setPseudoLikes( pseudoLikes - 1)
+      let newLikes = pseudoLikes - 1;
+     await updatePromptLikes({newLikes, id})
+      console.log("clicked")
     } else {
       setLikedButton(true)
-      setPseudoLikes(pseudoLikes + 1)
+      await setPseudoLikes(pseudoLikes + 1)
+      let newLikes = pseudoLikes + 1;
+      await updatePromptLikes({newLikes, id})
     }
+    return;
   };
 
   return(
@@ -38,4 +48,11 @@ const PromptItem = ({ text, title, author, likes, onPromptSelect, selectedPrompt
   );
 };
 
-export default PromptItem;
+function mapStateToProps(state) {
+  return {
+    errors: state.errors,
+    currentUser: state.currentUser
+  };
+}
+
+export default connect(mapStateToProps, {updatePromptLikes})(PromptItem);

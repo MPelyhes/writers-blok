@@ -22,7 +22,6 @@ if(localStorage.jwtToken){
 
 const App = () => {
   const [selectedPrompt, setSelectedPrompt] = useState(null);
-  console.log(selectedPrompt);
   
   return(
     <Provider store={store}>

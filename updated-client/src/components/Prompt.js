@@ -5,11 +5,9 @@ import PromptItem from "./PromptItem";
 
 
 const Prompt = ({ fetchPrompts, prompts, onPromptSelect, selectedPrompt }) => {
-
   useEffect(()=> {
     fetchPrompts()
   }, []);
- console.log(prompts)
 
   let promptList = prompts.map(p => {
     return <PromptItem 
@@ -19,6 +17,7 @@ const Prompt = ({ fetchPrompts, prompts, onPromptSelect, selectedPrompt }) => {
       text={p.prompt}
       title={p.title}
       likes={p.likes}
+      id={p._id}
       author={p.author}
     />
   })
