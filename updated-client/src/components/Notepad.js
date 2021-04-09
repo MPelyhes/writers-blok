@@ -19,7 +19,7 @@ const Notepad = ({ currentUser, prompt, submitPost, errors }) => {
   const handleSubmit = async (e) => {
     console.log("clicked")
     await submitPost({id, title, post}).then(()=> {
-      history.push("/");
+      history.push("/posts");
       setPost("");
       console.log("We posted it! Nice!") 
       {Alert("Success!", "Your post has been saved. You can revisit previous posts by clicking the posts link.")}

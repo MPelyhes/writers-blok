@@ -26,6 +26,7 @@ const Posts = ({ fetchPosts, posts, currentUser }) => {
 
   return(
     <div>
+      <h3>Your Posts</h3>
       {postList}
     </div>
   )
