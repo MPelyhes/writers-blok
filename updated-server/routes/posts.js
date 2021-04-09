@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router({ mergeParams: true });
 
-const { createPost, getPosts } = require("../handlers/post")
+const { createPost, getPosts, deletePost } = require("../handlers/post")
 
 router.route("/")
   .post(createPost)
-  .get(getPosts);
-
+  .get(getPosts)
+  .put(deletePost);
 
 module.exports = router;

@@ -11,7 +11,7 @@ const PromptItem = ({ text, title, author, likes, id, onPromptSelect, selectedPr
 
 
   const handleLike = async (e) => {
-    // e.preventDefault(); 
+   
     if(likeButton){
       setLikedButton(false)
       setPseudoLikes( pseudoLikes - 1)
