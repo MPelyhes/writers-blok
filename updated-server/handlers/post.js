@@ -37,7 +37,7 @@ exports.deletePost = async function (req, res, next) {
   try{
     await db.User.findByIdAndUpdate(userId, { $pull: { posts: postId } })
     await db.Post.findByIdAndDelete(postId);
-    return res.status(200)
+    return res.status(200).json(req.body);
   } catch(err) {
     return next(err);
   }

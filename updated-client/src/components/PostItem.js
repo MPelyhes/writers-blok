@@ -5,10 +5,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { deletePost } from "../store/actions/posts";
 
-const PostItem = ({title, post, created, postId, currentUser, deletePost}) => {
+const PostItem = ({title, post, created, postId, currentUser, deletePost, setDeletePost}) => {
 
   const userId = currentUser.user.id;
   
+  const deletePostHandler = async () =>{
+    await deletePost({postId, userId})
+    setDeletePost(postId)
+  }
+
   return (
     <div className="prompt-container">
       <h2>{title || "Title"}</h2>
@@ -21,7 +26,7 @@ const PostItem = ({title, post, created, postId, currentUser, deletePost}) => {
         </div>
         <div className="like-container">
           <div className="icon-container trash-container">
-            <FontAwesomeIcon icon={faTrash}  className="icon trash" alt="trash" onClick={()=> deletePost({postId, userId})} />
+            <FontAwesomeIcon icon={faTrash}  className="icon trash" alt="trash" onClick={deletePostHandler} />
           </div>
         </div>
       </div>

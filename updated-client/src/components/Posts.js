@@ -1,16 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from "react-redux";
 import { fetchPosts } from "../store/actions/posts";
 import PostItem from "./PostItem";
 
 const Posts = ({ fetchPosts, posts, currentUser }) => {
+  //The deletePost piece of state is to remove deleted items from the UI without refreshing the page
+  //This state does nothing to actually delete posts
+  const [deletePost, setDeletePost] = useState();
   const { id } = currentUser.user;
-  console.log(id)
+
   useEffect(()=> {
     fetchPosts(id)
-  }, []);
-  
-  console.log(posts)
+  }, [deletePost]);
 
   let postList = posts.map(p => {
     return <PostItem 
@@ -19,6 +20,7 @@ const Posts = ({ fetchPosts, posts, currentUser }) => {
       post={p.post}
       postId={p._id}
       created={p.createdAt}
+      setDeletePost={setDeletePost}
     />
   })
 
