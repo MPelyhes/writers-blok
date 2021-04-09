@@ -41,8 +41,10 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("
 }
 
 .prompt-container{
+  grid-column-start: 1;
+  grid-column-end: 2;
   height: 8rem;
-  max-width: 40rem;
+  /* max-width: 40rem; */
   height: fit-content;
   margin: 1.5rem;
   padding: 2rem;
@@ -480,6 +482,7 @@ textarea:focus, input:focus, button:focus{
 .sort-container{
   display:flex;
   align-items: center;
+  margin-left: 1.5rem;
   text-align: center;
 }
 
