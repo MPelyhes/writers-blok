@@ -26,6 +26,13 @@ const Notepad = ({ currentUser, prompt, submitPost, errors }) => {
     })
   }
 
+  const handleScroll = () => {
+    window.scroll({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }
+
   return (
     <div className="notepad">
       <div className="title">
@@ -36,7 +43,7 @@ const Notepad = ({ currentUser, prompt, submitPost, errors }) => {
         <button type="submit" className="save-button" onClick={handleSubmit}>Save</button> 
       )}
       {!currentUser.isAuthenticated && (
-        <Link to='/login' className="save-button">Login to Save</Link>
+        <Link to='/login' className="save-button" onClick={handleScroll}>Login to Save</Link>
       )}
       
     </div>
