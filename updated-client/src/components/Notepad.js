@@ -39,7 +39,7 @@ const Notepad = ({ currentUser, prompt, submitPost, errors }) => {
         <h1>{prompt || "Title"}</h1><span className="blinking-cursor">{!prompt ? "|" : ""}</span>
       </div>
       <textarea name="post" rows="40" cols="50" placeholder="Select a prompt to begin your writing warm-up" onChange={(e) => setPost(e.target.value)} value={post}></textarea>
-      {currentUser.isAuthenticated && (
+      {(currentUser.isAuthenticated && prompt) && (
         <button type="submit" className="save-button" onClick={handleSubmit}>Save</button> 
       )}
       {!currentUser.isAuthenticated && (
