@@ -600,7 +600,7 @@ textarea:focus, input:focus, button:focus{
   }
 }
 
-@media only screen and (max-width: 350px){
+@media only screen and (max-width: 365px){
   .sort-option{
     font-size: 0.75rem;
     font-weight: 500;

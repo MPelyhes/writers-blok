@@ -40,7 +40,7 @@ const Prompt = ({ fetchPrompts, prompts, onPromptSelect, selectedPrompt }) => {
           <div className={sortSelect === mostPopular ? "sort-option sort-option-selected" :"sort-option" }  onClick={() => setSortSelect(mostPopular)}>Most<span> </span>Popular</div>
         </div>
       </div>
-      {promptList}
+          {promptList}
     </div>
   )
 

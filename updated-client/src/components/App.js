@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import { Provider } from "react-redux";
 import { configureStore } from "../store";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -22,7 +22,7 @@ if(localStorage.jwtToken){
 
 const App = () => {
   const [selectedPrompt, setSelectedPrompt] = useState(null);
-  
+
   return(
     <Provider store={store}>
       <Router>
