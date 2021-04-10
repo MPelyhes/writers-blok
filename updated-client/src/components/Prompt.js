@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowCircleUp} from "@fortawesome/free-solid-svg-icons";
 import { fetchPrompts } from "../store/actions/prompts";
 import PromptItem from "./PromptItem";
 

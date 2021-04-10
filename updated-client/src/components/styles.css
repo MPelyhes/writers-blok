@@ -341,18 +341,37 @@ textarea:focus, input:focus, button:focus{
 .home-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  width: 80%;
+  /* justify-content: center; */
+  align-content: center;
+  align-self: center;
+  width: 90%;
+  height: 70%;
+  justify-content: space-between;
 }
 
+.home-container h3{
+  margin-top: 4rem;
+  font-size: 2rem;
+}
+
+.headers-container{
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  align-self: center;
+  height: 50%;
+  text-align: center;
+  justify-content: space-between;
+}
 
 .home-container h4 {
   color: white;
-  font-size: 1.15rem;
+  font-size: 1.75rem;
   font-weight: 700;
   margin-top: 0.8rem;
   margin-bottom: 0.8rem;
+  align-self: flex-end;
+
 }
 
 .small-logo {
@@ -360,14 +379,14 @@ textarea:focus, input:focus, button:focus{
   font-style: italic;
   color: #F22E8A;
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: 1.75rem;
   text-shadow: -1.5px 1.5px 0px #252D59;
                 /* -5px 5px 0px #252D59; */
                /* -7.5px 7.5px 0px #012340;  */
 }
 
 .home-button {
-  margin-top: 3rem;
+  margin: 3rem 0;
   max-width: 10rem;
   align-self: center;
 }
@@ -570,13 +589,33 @@ textarea:focus, input:focus, button:focus{
   }
 }
 
+.hand{
+  display: inline-block;
+  transform: rotateY(0.5turn);
+}
+
 @media only screen and (max-width: 600px){
   .prompt-container{
     margin: 1.25rem;
 
   }
   .sort-container{
-    margin: 1.25rem;
+    margin: 1.2rem;
+  }
+  .home-container{
+    height: 70%;
+    justify-content: space-between;
+  }
+  .headers-container{
+    height: 90%;
+    justify-content: space-between;
+    text-align: center;
+  }
+  .home-container h4 {
+    font-size: 1.25rem;
+  }
+  .small-logo{
+    font-size: 1.25rem;
   }
 }
 
