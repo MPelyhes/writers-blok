@@ -29,7 +29,7 @@ const PromptItem = ({ text, title, author, likes, id, onPromptSelect, selectedPr
 
   return(
     <div className={title === selectedPrompt ? "prompt-container prompt-selected" : "prompt-container"} onClick={() => onPromptSelect(title)}>
-      <h2>{title || "Title"}</h2>
+     <h2>{title || "Title"}</h2>
       <div className="prompt">
         {text || "This is where a really cool description of the prompt would go! I would put lorem ipsum text here, but I forgot how to do that quickly using emmett. Oh well!"}
       </div>

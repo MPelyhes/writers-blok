@@ -17,7 +17,7 @@ const history = useHistory();
   if(!currentUser.isAuthenticated){
     return <Link to='/login' className="nav-tags">Login/Register</Link>
   }
-  return <Link onClick={clickLogout} className="nav-tags">Logout</Link>
+  return <Link to="/" onClick={clickLogout} className="nav-tags">Logout</Link>
  } 
 
  const userPosts = () => {

@@ -24,9 +24,7 @@ const Main = ({ authUser, errors, removeError, currentUser, onPromptSelect, prom
           />
         </Route>
         <Route exact path="/prompts/new"> 
-        <CreatePrompt 
-          
-        />
+        <CreatePrompt/>
         </Route>
         <Route exact path="/posts">
           <Posts
