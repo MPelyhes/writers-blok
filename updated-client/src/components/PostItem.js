@@ -10,6 +10,8 @@ const PostItem = ({title, post, created, postId, currentUser, deletePost, setDel
 
   const userId = currentUser.user.id;
   
+  //when someone clicks the delete icon we first setDeleteClicked to true, which adds an animation class to the
+  //prompt item. Next, we delete the post from the api, and then remove the post from the ui
   const deletePostHandler = async () =>{
     await setDeleteClicked(true)
     await deletePost({postId, userId})

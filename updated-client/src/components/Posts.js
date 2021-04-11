@@ -9,6 +9,7 @@ const Posts = ({ fetchPosts, posts, currentUser }) => {
   const [deletePost, setDeletePost] = useState();
   const { id } = currentUser.user;
 
+  //we immediately fetch all the posts by the current user. We refresh whenever a post is deleted from the ui
   useEffect(()=> {
     fetchPosts(id)
   }, [deletePost]);

@@ -8,7 +8,9 @@ import { updatePromptLikes } from "../store/actions/prompts";
 const PromptItem = ({ text, title, author, likes, id, onPromptSelect, selectedPrompt, updatePromptLikes }) => {
   const [likeButton, setLikedButton] = useState(false);
   const [pseudoLikes, setPseudoLikes] = useState(likes);
-
+  //the pseudolike state object does nothing to change the actual number of likes that a prompt has. Instead,
+  //it provides a quick way to change the number of likes in the ui when the like button is changed, without
+  //having to re-render the component. 
 
   const handleLike = async (e) => {
    
@@ -17,7 +19,7 @@ const PromptItem = ({ text, title, author, likes, id, onPromptSelect, selectedPr
       setPseudoLikes( pseudoLikes - 1)
       let newLikes = pseudoLikes - 1;
      await updatePromptLikes({newLikes, id})
-      console.log("clicked")
+      // console.log("clicked")
     } else {
       setLikedButton(true)
       await setPseudoLikes(pseudoLikes + 1)
@@ -27,7 +29,8 @@ const PromptItem = ({ text, title, author, likes, id, onPromptSelect, selectedPr
     return;
   };
 
-
+  //the handlescorll function is to help us out when a user is using a mobile device to access the app.
+  //if they select a prompt it will scroll them to the bottom of the app where the notepad is.
   const handleScroll = () => {
     window.scroll({
       top: document.body.offsetHeight,

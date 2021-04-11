@@ -5,8 +5,9 @@ import PromptItem from "./PromptItem";
 
 
 const Prompt = ({ fetchPrompts, prompts, onPromptSelect, selectedPrompt }) => {
-  const [sortSelect, setSortSelect] = useState("createdAt")
+  const [sortSelect, setSortSelect] = useState("createdAt") //we default sort by most recent
 
+  //we immediately call the api for all prompts and refresh whenever the sort select is changed
   useEffect(()=> {
     fetchPrompts({sortSelect})
   }, [sortSelect]);
