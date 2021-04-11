@@ -35,7 +35,7 @@ const Notepad = ({ currentUser, prompt, submitPost, errors }) => {
 
   return (
     <div className="notepad">
-      <NotepadTitle prompt={prompt} />
+      {<NotepadTitle prompt={prompt} />}
       <textarea name="post" rows="40" cols="50" placeholder="Select a prompt to begin your writing warm-up" onChange={(e) => setPost(e.target.value)} value={post}></textarea>
       {(currentUser.isAuthenticated && prompt) && (
         <button type="submit" className="save-button" onClick={handleSubmit}>Save</button> 
