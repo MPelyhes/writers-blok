@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import { connect } from "react-redux";
-import shortid from "shortid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp as liked } from "@fortawesome/free-solid-svg-icons";
 import {faThumbsUp as notLiked } from "@fortawesome/free-regular-svg-icons"
@@ -28,9 +27,6 @@ const PromptItem = ({ text, title, author, likes, id, onPromptSelect, selectedPr
     return;
   };
 
-  const getRandomKey = () => {
-    return shortid.generate();
-}
 
   const handleScroll = () => {
     window.scroll({
@@ -41,7 +37,7 @@ const PromptItem = ({ text, title, author, likes, id, onPromptSelect, selectedPr
   }
 
   return(
-    <div key={getRandomKey()} className={title === selectedPrompt ? "prompt-container prompt-selected animate__pulse animate__animated" : "prompt-container"} onClick={() => {onPromptSelect(title); handleScroll();}}>
+    <div className={title === selectedPrompt ? "prompt-container prompt-selected animate__pulse animate__animated" : "prompt-container"} onClick={() => {onPromptSelect(title); handleScroll();}}>
      <h2>{title || "Title"}</h2>
       <div className="prompt">
         {text || "This is where a really cool description of the prompt would go! I would put lorem ipsum text here, but I forgot how to do that quickly using emmett. Oh well!"}
