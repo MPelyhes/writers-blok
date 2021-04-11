@@ -17,6 +17,10 @@ const Notepad = ({ currentUser, prompt, submitPost, errors }) => {
   
   const handleSubmit = async () => {
     console.log("clicked")
+    if(!post.length || !title.length){
+      {Alert("Hmmm...", "It looks like you haven't written anything, yet.")};
+      return
+    }
     await submitPost({id, title, post}).then(()=> {
       history.push("/posts");
       setPost("");
