@@ -9,7 +9,7 @@ const NotepadTitle = ({ prompt }) => {
    if(prompt){
      setTitle(prompt);
      let value = key + 1;
-     setKey(value);
+     setKey(value); // we add 1 to the key so that it changes forcing the h1 to re-render
      console.log(key)
    }
  }, [prompt]);

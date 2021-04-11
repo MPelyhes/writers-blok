@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { connect } from "react-redux";
 import moment from "moment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,16 +6,19 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { deletePost } from "../store/actions/posts";
 
 const PostItem = ({title, post, created, postId, currentUser, deletePost, setDeletePost}) => {
+  const [deleteClicked, setDeleteClicked] = useState(false)
 
   const userId = currentUser.user.id;
   
   const deletePostHandler = async () =>{
+    // setDeleteClicked(true)
     await deletePost({postId, userId})
+    await setDeleteClicked(true)
     setDeletePost(postId)
   }
 
   return (
-    <div className="prompt-container">
+    <div className={deleteClicked ? "animate__animated animate__slideOutRight prompt-container" : "prompt-container"}>
       <h2>{title || "Title"}</h2>
       <div className="prompt">
         {post || "This is where a really cool description of the prompt would go! I would put lorem ipsum text here, but I forgot how to do that quickly using emmett. Oh well!"}

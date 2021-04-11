@@ -13,6 +13,7 @@ const history = useHistory();
    logout();
  }
 
+ //if their is a user logged in show a logout link, otherwise show a login/register link
  const authLink = () =>{
   if(!currentUser.isAuthenticated){
     return <Link to='/login' className="nav-tags">Login/Register</Link>
@@ -20,6 +21,7 @@ const history = useHistory();
   return <Link to="/" onClick={clickLogout} className="nav-tags">Logout</Link>
  } 
 
+ //only show the users post link if there is a user logged in
  const userPosts = () => {
   if(currentUser.isAuthenticated){
     return <Link to='/posts' className="nav-tags">Posts</Link>
