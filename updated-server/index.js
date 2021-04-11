@@ -8,16 +8,17 @@ const authRoutes = require("./routes/auth");
 const promptRoutes = require("./routes/prompts");
 const postRoutes = require("./routes/posts");
 
+const { loginRequired, ensureCorrectUser } = require("./middleware/auth");
 const db = require("./models");
 const PORT = 8081;
 
 app.use(cors());
+
 app.use(bodyParser.json());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/prompt", promptRoutes)
 app.use("/api/posts/:id", postRoutes);
-
 
 app.use(function(req, res, next) {
   let err = new Error("Not Found");

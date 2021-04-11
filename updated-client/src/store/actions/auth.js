@@ -27,7 +27,8 @@ export function authUser(type, userData) {
   return dispatch => {
     // wrap our thunk in a promise so we can wait for the API call
     return new Promise((resolve, reject) => {
-  
+      console.log(userData, type)
+   
       return apiCall("post", `/api/auth/${type}`, userData)
         .then(({ token, ...user }) => {
           console.log(token)
