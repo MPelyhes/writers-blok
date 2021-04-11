@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { useHistory } from "react-router";
 import { submitPost } from "../store/actions/posts"
+import NotepadTitle from "./NotepadTitle";
 import Alert from "./Alert";
 
 
@@ -35,9 +36,7 @@ const Notepad = ({ currentUser, prompt, submitPost, errors }) => {
 
   return (
     <div className="notepad">
-      <div className="title">
-        <h1>{prompt || "Title"}</h1><span className="blinking-cursor">{!prompt ? "|" : ""}</span>
-      </div>
+      <NotepadTitle prompt={prompt} />
       <textarea name="post" rows="40" cols="50" placeholder="Select a prompt to begin your writing warm-up" onChange={(e) => setPost(e.target.value)} value={post}></textarea>
       {(currentUser.isAuthenticated && prompt) && (
         <button type="submit" className="save-button" onClick={handleSubmit}>Save</button> 
