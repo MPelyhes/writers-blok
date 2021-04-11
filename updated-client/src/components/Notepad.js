@@ -8,7 +8,6 @@ import Alert from "./Alert";
 
 
 const Notepad = ({ currentUser, prompt, submitPost, errors }) => {
-  
   const [post, setPost] = useState("");
 
   const history = useHistory();

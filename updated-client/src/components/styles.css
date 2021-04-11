@@ -152,6 +152,7 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("
   top: 0;
   left: 0;
   position: sticky;
+  z-index: 9999;
 }
 
 .nav-links{
