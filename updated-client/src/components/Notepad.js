@@ -15,6 +15,8 @@ const Notepad = ({ currentUser, prompt, submitPost, errors }) => {
   const title = prompt;
   const {id} = currentUser.user;
   
+  //if the user does not have a selected prompt and something writtend in the notepad, we flash an alert
+  //Otherwise, we submit their post and redirect them to the posts page in the main component
   const handleSubmit = async () => {
     console.log("clicked")
     if(!post.length || !title.length){

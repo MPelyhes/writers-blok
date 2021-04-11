@@ -11,9 +11,8 @@ const PostItem = ({title, post, created, postId, currentUser, deletePost, setDel
   const userId = currentUser.user.id;
   
   const deletePostHandler = async () =>{
-    // setDeleteClicked(true)
-    await deletePost({postId, userId})
     await setDeleteClicked(true)
+    await deletePost({postId, userId})
     setDeletePost(postId)
   }
 
