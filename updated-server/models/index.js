@@ -2,7 +2,7 @@ if(process.env.NODE_ENV !== 'production'){
   require('dotenv').config();
 }
 
-const dbUrl = process.env.DB_URL;
+const dbUrl = process.env.DB_URL || "mongodb://localhost/writersBLOK";
 
 const mongoose = require("mongoose");
 mongoose.set("debug", true);
