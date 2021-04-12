@@ -8,9 +8,8 @@ const authRoutes = require("./routes/auth");
 const promptRoutes = require("./routes/prompts");
 const postRoutes = require("./routes/posts");
 
-const { loginRequired, ensureCorrectUser } = require("./middleware/auth");
-const db = require("./models");
-const PORT = 8081;
+
+const PORT = process.env.PORT || 8081;
 
 app.use(cors());
 
