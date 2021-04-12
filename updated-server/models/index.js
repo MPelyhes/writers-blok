@@ -1,7 +1,13 @@
+if(process.env.NODE_ENV !== 'production'){
+  require('dotenv').config();
+}
+
+const dbUrl = process.env.DB_URL;
+
 const mongoose = require("mongoose");
 mongoose.set("debug", true);
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/writersBLOK", {
+mongoose.connect(dbUrl, {
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true,
