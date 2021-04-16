@@ -41,4 +41,4 @@ mattpelyhes@gmail.com
 ## Credits and References
 - animate.css for home, prompt, and delete page animations
 - react-typed for notepad title typing animation
-- heropatterns for 
+- heropatterns for main background pattern
