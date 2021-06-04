@@ -38,7 +38,19 @@ const Notepad = ({ currentUser, prompt, submitPost, errors }) => {
   const handleScroll = () => {
     window.scroll({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
+    });
+  }
+
+  if(!currentUser){
+    window.Intercom("boot", {
+      app_id: "pddzazn3",
+   });
+  } else {
+    window.Intercom("boot", {
+      app_id: "pddzazn3",
+      name: `${currentUser.username}`, // Full name
+      email: `${currentUser.email}`, // Email address
     });
   }
 
