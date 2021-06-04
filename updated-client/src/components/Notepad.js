@@ -42,15 +42,17 @@ const Notepad = ({ currentUser, prompt, submitPost, errors }) => {
     });
   }
 
-  if(!currentUser){
+  if(!currentUser.user){
     window.Intercom("boot", {
       app_id: "pddzazn3",
    });
   } else {
+    console.log(`${currentUser}`)
+    console.log(currentUser)
     window.Intercom("boot", {
       app_id: "pddzazn3",
-      name: `${currentUser.username}`, // Full name
-      email: `${currentUser.email}`, // Email address
+      name: `${currentUser.user.username}`, // Full name
+      email: `${currentUser.user.email}`, // Email address
     });
   }
 
